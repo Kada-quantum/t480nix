@@ -1,0 +1,107 @@
+{
+  inputs,
+  outputs,
+  lib,
+  config,
+  pkgs,
+  ...
+}: {
+  imports = [
+    # outputs.homeManagerModules.stylix
+    outputs.homeManagerModules.sway
+  ];
+
+  programs.firefox = {
+    profiles.school = {
+      id = 1;
+    };
+  };
+  xdg = {
+    configFile.iamb = {
+      enable = true;
+      target = "iamb/config.toml";
+      text = let matrix = builtins.readFile ../matrix.txt; in ''
+        [profiles.kada]
+        user_id = "${matrix}"
+        [settings]
+        image_preview = {}
+        [settings.notifications]
+        enabled = true
+      '';
+    };
+    desktopEntries.firefox = {
+      # enable = true;
+      # name = "firefox";
+      # desktopName = "Firefox";
+      name = "Firefox";
+      genericName = "Web Browser";
+      icon = "firefox";
+      exec = "firefox --name firefox %U";
+      categories = ["Network" "WebBrowser"];
+      mimeType = ["text/html" "text/xml" "application/xhtml+xml" "application/vnd.mozilla.xul+xml" "x-scheme-handler/http" "x-scheme-handler/https"];
+      startupNotify = true;
+      terminal = false;
+      # startupWMClass = "firefox";
+      actions = {
+        new-private-window = {
+          exec = "firefox --private-window %U";
+          name = "New Private Window";
+        };
+        new-window = {
+          exec = "firefox --new-window %U";
+          name = "New Window";
+        };
+        school = {
+          exec = "firefox --P school %U";
+          name = "School Profile";
+        };
+        profile-manager-window = {
+          exec = "firefox --ProfileManager %U";
+          name = "Profile Manager";
+        };
+      };
+    };
+  };
+  programs.home-manager.enable = true;
+  home = {
+    # packages =
+    # let var =
+    #   (
+    #   let makeFile =
+    #   pkgs.makeDesktopItem
+    #   {
+    #   };
+    #   in
+    #   (map lib.hiPrio (lib.attrsets.mapAttrsToList makeFile config.xdg.desktopEntries))
+    #   );
+    #   _f = builtins.trace var;
+    # in var;
+    file = {
+      arduino = {
+        target = ".arduino15/arduino-cli.yaml";
+        text = builtins.toJSON {
+          sketch.always_export_binaries = true;
+        };
+        # "
+        # directories:
+        #   data: /nix/store/3m6whcgp2zf1cir2x656bwnn7lhwz77q-arduino-data
+        #   user: /nix/store/b3h9x94zls588n5rsydnjkxsa2yf96wg-arduino-libraries
+        # updater:
+        #   enable_notification: false
+        # sketch:
+        #   always_export_binaries: true
+        # ";
+      };
+      # iamb = {
+        
+      # };
+    };
+    sessionVariables = {
+      # EDITOR = "hx";
+    };
+    username = "kada";
+    homeDirectory = "/home/kada";
+    # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
+    stateVersion = "24.11";
+  };
+}
