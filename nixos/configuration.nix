@@ -573,7 +573,7 @@
     dust
     dysk
     inkscape
-    gimp
+    unstable.gimp
     brave
     prismlauncher
     cubiomes-viewer
