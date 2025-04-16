@@ -480,6 +480,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    codebook
     markdown-oxide
     marksman
     nb
@@ -526,7 +527,6 @@
     )
     asm-lsp
     tailspin
-    codespell
     arduino-language-server
     sweet-folders
     clang-tools

@@ -41,8 +41,9 @@
             command = ["alejandra"];
           };
         };
-        language-server.typos = {
-          command = "codespell";
+        language-server.codebook = {
+          command = "codebook-lsp";
+          args = ["serve"];
         };
         language = [
           {
@@ -52,12 +53,12 @@
           }
           {
             name = "typst";
-            language-servers = ["tinymist" "typos"];
+            language-servers = ["tinymist" "codebook"];
             formatter = {command = "typstyle";};
           }
           {
             name = "markdown";
-            language-servers = ["markdown-oxide" "marksman" "typos"];
+            language-servers = ["markdown-oxide" "marksman" "codebook"];
           }
         ];
 

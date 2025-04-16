@@ -10,6 +10,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    crane.url = "github:ipetkov/crane";
+
     home-manager = {
       url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -64,7 +66,14 @@
     forAllSystems = nixpkgs.lib.genAttrs systems;
   in {
     # Custom Packages
-    packages = forAllSystems (system: import ./pkgs nixpkgs.legacyPackages.${system});
+    packages = forAllSystems (system: let
+      pkgs = nixpkgs.legacyPackages.${system};
+      craneLib = (inputs.crane.mkLib pkgs).overrideToolchain (p: p.inputs.fenix.packages.${system}.minimal.toolchain);
+    in
+      import ./pkgs {
+        inherit pkgs;
+        inherit craneLib;
+      });
     formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
 
     overlays = import ./overlays {inherit inputs;};

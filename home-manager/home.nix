@@ -7,7 +7,6 @@
   ...
 }: {
   imports = [
-    # outputs.homeManagerModules.stylix
     outputs.homeManagerModules.sway
   ];
 
@@ -66,18 +65,6 @@
   };
   programs.home-manager.enable = true;
   home = {
-    # packages =
-    # let var =
-    #   (
-    #   let makeFile =
-    #   pkgs.makeDesktopItem
-    #   {
-    #   };
-    #   in
-    #   (map lib.hiPrio (lib.attrsets.mapAttrsToList makeFile config.xdg.desktopEntries))
-    #   );
-    #   _f = builtins.trace var;
-    # in var;
     file = {
       arduino = {
         target = ".arduino15/arduino-cli.yaml";
@@ -94,11 +81,9 @@
         #   always_export_binaries: true
         # ";
       };
-      # iamb = {
-      # };
     };
     sessionVariables = {
-      # EDITOR = "hx";
+      EDITOR = "hx";
     };
     username = "kada";
     homeDirectory = "/home/kada";

@@ -1,7 +1,13 @@
 # https://nixos.wiki/wiki/Overlays
 {inputs, ...}: {
   # Includes custom packages in pkgs
-  additions = final: _prev: import ../pkgs final.pkgs;
+  additions = final: _prev: let
+    craneLib = (inputs.crane.mkLib final.pkgs).overrideToolchain (p: final.pkgs.fenix.minimal.toolchain);
+  in
+    import ../pkgs {
+      pkgs = final.pkgs;
+      inherit craneLib;
+    };
 
   modifications = final: prev: {
     lutris = prev.lutris.override {

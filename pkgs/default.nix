@@ -1,5 +1,8 @@
 # Custom packages
-pkgs: {
+{
+  pkgs,
+  craneLib,
+}: {
   # voicevox = let
   #   git = pkgs.fetchgit {
   #     url = "https://github.com/NixOS/nixpkgs.git";
@@ -17,4 +20,5 @@ pkgs: {
   #   pkgs.callPackage "${git}/pkgs/by-name/vo/voicevox/package.nix" {inherit voicevox-engine;};
   spotblock-rs = pkgs.callPackage ./spotblock-rs.nix {};
   open-webui = pkgs.unstable.callPackage ./open-webui.nix {};
+  codebook = pkgs.callPackage ./codebook.nix {inherit craneLib;};
 }

@@ -1,7 +1,13 @@
 {
-  xdg.configFile.pixi = {
-    target = "pixi/config.toml";
-    text = "change-ps1 = false";
+  xdg.configFile = {
+    pixi = {
+      target = "pixi/config.toml";
+      text = "change-ps1 = false";
+    };
+    codebook = {
+      target = "codebook/codebook.toml";
+      text = "dictionaries = [\"en_us\", \"en_gb\"]";
+    };
   };
   gtk.enable = true;
   programs = {
