@@ -8,10 +8,27 @@
         theme = "gruvbox_dark_hard";
         editor = {
           line-number = "relative";
-          rulers = [80];
-          text-width = 80;
+          rulers = [78];
+          text-width = 78;
           color-modes = true;
-          end-of-line-diagnostics = "hint";
+          bufferline = "multiple";
+          cursorline = true;
+          cursorcolumn = true;
+          end-of-line-diagnostics = "disable";
+          lsp = {
+            display-progress-messages = true;
+            display-inlay-hints = true;
+          };
+          indent-guides.render = true;
+          inline-diagnostics = {
+            cursor-line = "hint";
+            other-lines = "warning";
+          };
+          statusline = {
+            left = ["mode" "spinner" "version-control" "file-type" "file-name" "read-only-indicator" "file-modification-indicator"];
+            center = [];
+            right = ["diagnostics" "selections" "register" "position" "total-line-numbers" "file-encoding" "file-line-ending"];
+          };
           # soft-wrap = {
           #   enable = true;
           #   wrap-at-text-width = true;
@@ -19,21 +36,14 @@
         };
       };
       languages = {
-        language-server.nixd = {
-          command = "nixd";
-          config = {
-            formatting = {
-              command = ["alejandra"];
-            };
+        language-server.nixd.config = {
+          formatting = {
+            command = ["alejandra"];
           };
         };
         language-server.typos = {
-          command = "typos-lsp";
+          command = "codespell";
         };
-        language-server.asm-lsp = {
-          command = "asm-lsp";
-        };
-
         language = [
           {
             name = "nix";
@@ -46,12 +56,8 @@
             formatter = {command = "typstyle";};
           }
           {
-            name = "nasm";
-            language-servers = [ "asm-lsp" ];
-          }
-          {
-            name = "gas";
-            language-servers = [ "asm-lsp" ];
+            name = "markdown";
+            language-servers = ["markdown-oxide" "marksman" "typos"];
           }
         ];
 
@@ -61,7 +67,6 @@
           outputPath = "$root/target/$dir/$name";
           formatterMode = "typstyle";
         };
-
       };
     };
   };

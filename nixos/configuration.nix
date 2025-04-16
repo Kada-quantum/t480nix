@@ -480,6 +480,9 @@
   };
 
   environment.systemPackages = with pkgs; [
+    markdown-oxide
+    marksman
+    nb
     unstable.anki-bin
     imv
     iamb
@@ -523,7 +526,7 @@
     )
     asm-lsp
     tailspin
-    typos-lsp
+    codespell
     arduino-language-server
     sweet-folders
     clang-tools
