@@ -20,7 +20,9 @@
     configFile.iamb = {
       enable = true;
       target = "iamb/config.toml";
-      text = let matrix = builtins.readFile ../matrix.txt; in ''
+      text = let
+        matrix = builtins.readFile inputs.matrix-account;
+      in ''
         [profiles.kada]
         user_id = "${matrix}"
         [settings]
@@ -93,7 +95,6 @@
         # ";
       };
       # iamb = {
-        
       # };
     };
     sessionVariables = {

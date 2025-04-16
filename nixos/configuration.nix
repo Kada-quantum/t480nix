@@ -157,7 +157,7 @@
         server = {
           port = 1111;
           bind_address = "0.0.0.0";
-          secret_key = builtins.readFile ../searx.secret;
+          secret_key = builtins.readFile inputs.searx-secret;
           limiter = false;
           image_proxy = true;
         };
@@ -171,11 +171,15 @@
         redis.url = "redis://redis:6379/0";
       };
     };
-    open-webui.enable = true;
-    open-webui.package = pkgs.unstable.open-webui;
-    ollama.enable = true;
-    ollama.acceleration = "cuda";
-    ollama.package = pkgs.unstable.ollama;
+    open-webui = {
+      enable = true;
+      package = pkgs.open-webui;
+    };
+    ollama = {
+      enable = true;
+      acceleration = "cuda";
+      package = pkgs.unstable.ollama;
+    };
     playerctld.enable = true;
     dbus.implementation = "broker";
     # ratbagd.enable = true;
@@ -372,7 +376,7 @@
         enable = true;
         extraArgs = "--keep 3 --keep-since 3d";
       };
-      flake = "/etc/nixos";
+      flake = "/etc/flakes/nixos";
     };
     git = {
       enable = true;
@@ -483,7 +487,11 @@
     clang
     mold-wrapped
     spotblock-rs
-    pixi
+    (pkgs.buildFHSUserEnv {
+      name = "pixi";
+      runScript = "pixi";
+      targetPkgs = pkgs: with pkgs; [pixi];
+    })
     python3Minimal
     (
       wrapArduinoCLI
@@ -533,7 +541,7 @@
     gh
     gitui
     delta
-    gitoxide
+    unstable.gitoxide
     zoxide
     wofi
     waybar
@@ -581,7 +589,7 @@
     spotify
     servo
     easyeffects
-    voicevox
+    unstable.voicevox
   ];
 
   # Env Variables

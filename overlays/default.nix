@@ -40,6 +40,20 @@
     unstable = import inputs.nixpkgs-unstable {
       system = final.system;
       config.allowUnfree = true;
+      overlays = [
+        (final: prev: {
+          python312 = prev.python312.override {
+            packageOverrides = pyself: pysuper: {
+              gcp-storage-emulator = pysuper.gcp-storage-emulator.overrideAttrs (attrs: {
+                pytestFlagsArray = [
+                  # AssertionError: BadRequest not raised
+                  "--deselect=tests/test_server.py::ObjectsTests::test_invalid_crc32c_hash"
+                ];
+              });
+            };
+          };
+        })
+      ];
     };
   };
 

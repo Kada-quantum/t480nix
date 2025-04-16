@@ -35,6 +35,14 @@
       flake = false;
       # sha256 = "bea1d6d47977cd16c93edcd25a8ca16410a89880dd7f7f008d88b170ef28c860";
     };
+    matrix-account = {
+      url = "path:/etc/nixos/matrix.txt";
+      flake = false;
+    };
+    searx-secret = {
+      url = "path:/etc/nixos/searx.secret";
+      flake = false;
+    };
   };
 
   outputs = {
