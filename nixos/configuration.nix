@@ -465,10 +465,6 @@
         fx-cast-bridge
       ];
     };
-    java = {
-      enable = true;
-      package = pkgs.jdk23.override {enableJavaFX = true;};
-    };
     steam = {
       enable = true;
       gamescopeSession.enable = true;
@@ -575,7 +571,9 @@
     inkscape
     unstable.gimp
     brave
-    prismlauncher
+    (prismlauncher.override {
+      jdks = [jdk23];
+    })
     cubiomes-viewer
     libreoffice-fresh
     hunspell
