@@ -68,7 +68,7 @@
     # Custom Packages
     packages = forAllSystems (system: let
       pkgs = nixpkgs.legacyPackages.${system};
-      craneLib = (inputs.crane.mkLib pkgs).overrideToolchain (p: p.inputs.fenix.packages.${system}.minimal.toolchain);
+      craneLib = (inputs.crane.mkLib pkgs).overrideToolchain (p: p.inputs.fenix.packages.${system}.stable.minimalToolchain);
     in
       import ./pkgs {
         inherit pkgs;
