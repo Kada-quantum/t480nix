@@ -45,6 +45,17 @@
           command = "codebook-lsp";
           args = ["serve"];
         };
+        language-server.tinymist.config = {
+          typstExtraArgs = ["main.typ"];
+          exportPdf = "onType";
+          outputPath = "$root/target/$dir/$name";
+          formatterMode = "typstyle";
+        };
+        language-server.deno-lsp = {
+          command = "deno";
+          args = ["lsp"];
+          config.deno.enable = true;
+        };
         language = [
           {
             name = "nix";
@@ -60,14 +71,21 @@
             name = "markdown";
             language-servers = ["markdown-oxide" "marksman" "codebook"];
           }
+          {
+            name = "typescript";
+            roots = ["deno.json" "deno.jsonc" "package.json"];
+            file-types = ["ts" "tsx"];
+            auto-format = true;
+            language-servers = ["deno-lsp"];
+          }
+          {
+            name = "javascript";
+            roots = ["deno.json" "deno.jsonc" "package.json"];
+            file-types = ["js" "jsx"];
+            auto-format = true;
+            language-servers = ["deno-lsp"];
+          }
         ];
-
-        language-server.tinymist.config = {
-          typstExtraArgs = ["main.typ"];
-          exportPdf = "onType";
-          outputPath = "$root/target/$dir/$name";
-          formatterMode = "typstyle";
-        };
       };
     };
   };
