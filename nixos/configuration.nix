@@ -569,7 +569,7 @@
     dust
     dysk
     inkscape
-    unstable.gimp
+    unstable.gimp3
     brave
     (prismlauncher.override {
       jdks = [jdk23];
