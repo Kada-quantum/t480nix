@@ -578,6 +578,7 @@
     libreoffice-fresh
     hunspell
     hunspellDicts.en_GB-large
+    hunspellDicts.es-es
     vlc
     vulkan-tools
     autotiling-rs
