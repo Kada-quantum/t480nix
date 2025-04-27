@@ -69,7 +69,8 @@
           }
           {
             name = "markdown";
-            language-servers = ["markdown-oxide" "marksman" "codebook"];
+            # language-servers = ["markdown-oxide" "marksman" "codebook"];
+            language-servers = ["markdown-oxide" "codebook"];
           }
           {
             name = "typescript";

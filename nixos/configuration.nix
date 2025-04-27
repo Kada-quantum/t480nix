@@ -478,7 +478,6 @@
   environment.systemPackages = with pkgs; [
     codebook
     markdown-oxide
-    marksman
     nb
     unstable.anki-bin
     imv
