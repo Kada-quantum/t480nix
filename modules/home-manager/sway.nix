@@ -132,8 +132,8 @@ in {
       keybindings = lib.mkOptionDefault {
         "${modifier}+Shift+e" = "exec swaymsg exit";
         "${modifier}+Tab" = "exec sway-easyfocus";
-        "XF86MonBrightnessDown" = "exec brightnessctl set 5%- | sed -En 's/.*\\(([0-9]+)%\\).*/\\1/p' > $(systemctl show --user wob.socket -p Listen | sed 's/Listen=//' | cut -d' ' -f1)";
-        "XF86MonBrightnessUp" = "exec brightnessctl set 5%+ | sed -En 's/.*\\(([0-9]+)%\\).*/\\1/p' > $(systemctl show --user wob.socket -p Listen | sed 's/Listen=//' | cut -d' ' -f1)";
+        "XF86MonBrightnessDown" = "exec brightnessctl set 1%- | sed -En 's/.*\\(([0-9]+)%\\).*/\\1/p' > $(systemctl show --user wob.socket -p Listen | sed 's/Listen=//' | cut -d' ' -f1)";
+        "XF86MonBrightnessUp" = "exec brightnessctl set 1%+ | sed -En 's/.*\\(([0-9]+)%\\).*/\\1/p' > $(systemctl show --user wob.socket -p Listen | sed 's/Listen=//' | cut -d' ' -f1)";
         "XF86AudioRaiseVolume" = "exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%+ && wpctl get-volume @DEFAULT_AUDIO_SINK@ | sed 's/[^0-9]//g' > $(systemctl show --user wob.socket -p Listen | sed 's/Listen=//' | cut -d' ' -f1)";
         "XF86AudioLowerVolume" = "exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%- && wpctl get-volume @DEFAULT_AUDIO_SINK@ | sed 's/[^0-9]//g' > $(systemctl show --user wob.socket -p Listen | sed 's/Listen=//' | cut -d' ' -f1)";
         "XF86AudioMute" = "exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle && (wpctl get-volume @DEFAULT_AUDIO_SINK@ | grep -q MUTED && echo 0 > $(systemctl show --user wob.socket -p Listen | sed 's/Listen=//' | cut -d' ' -f1)) || wpctl get-volume @DEFAULT_AUDIO_SINK@ | sed 's/[^0-9]//g' > $(systemctl show --user wob.socket -p Listen | sed 's/Listen=//' | cut -d' ' -f1)";
