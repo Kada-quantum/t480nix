@@ -78,7 +78,7 @@
 
     overlays = import ./overlays {inherit inputs;};
     nixosModules = import ./modules/nixos;
-    homeManagerModules = import ./modules/home-manager;
+    homeManagerModules = import ./modules/home-manager nixpkgs.lib;
 
     nixosConfigurations = {
       # Lenovo Thinkpad T480

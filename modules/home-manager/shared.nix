@@ -19,7 +19,6 @@
         isDefault = true;
       };
     };
-    waybar.enable = true;
     alacritty.enable = true;
     zsh = {
       enable = true;

@@ -40,7 +40,7 @@
     users.kada = {
       useDefaultShell = true;
       isNormalUser = true;
-      extraGroups = ["video" "networkmanager" "wheel" "scanner" "lp" "dialout" "disk"];
+      extraGroups = ["video" "input" "networkmanager" "wheel" "scanner" "lp" "dialout" "disk"];
       createHome = true;
       home = "/home/kada";
     };
@@ -476,6 +476,8 @@
   };
 
   environment.systemPackages = with pkgs; [
+    pwvucontrol
+    sway-easyfocus
     codebook
     markdown-oxide
     nb
@@ -529,7 +531,6 @@
     gtk2
     gtk3
     gtk4
-    pavucontrol
     unstable.helix
     bat
     mupdf
