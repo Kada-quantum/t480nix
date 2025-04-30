@@ -55,7 +55,7 @@ in {
           format-charging = "{icon}";
           format-plugged = "{icon}";
           format-alt = "{time}";
-          format-icons = ["▁" "▃" "▄" "▅" "▆"];
+          format-icons = ["▁" "▂" "▃" "▄" "▅" "▆" "▇" "█"];
           tooltip-format = "BAT0:{capacity}%";
         };
         "battery#BAT1" = {
@@ -65,16 +65,16 @@ in {
           format-charging = "{icon}";
           format-plugged = "{icon}";
           format-alt = "{time}";
-          format-icons = ["▁" "▃" "▄" "▅" "▆"];
+          format-icons = ["▁" "▂" "▃" "▄" "▅" "▆" "▇" "█"];
           tooltip-format = "BAT1:{capacity}%";
         };
         keyboard-state = {
           numlock = true;
           capslock = true;
-          format = "{name}:{icon}";
+          format = "{icon}{name}";
           format-icons = {
-            locked = "locked";
-            unlocked = "unlocked";
+            locked = "L";
+            unlocked = "U";
           };
         };
         "sway/workspaces" = {
@@ -82,8 +82,8 @@ in {
           all-outputs = true;
         };
         clock = {
-          format-alt = "{:%b %d %a %T}";
-          tooltip-format = "{:%b %d %a %T}\\n{calendar}";
+          format-alt = "{:%b %d %a}";
+          tooltip-format = "<tt>{calendar}</tt>";
         };
         network = {
           format-wifi = "wifi:{essid}:{signalStrength}%";
