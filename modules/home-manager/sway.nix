@@ -144,6 +144,11 @@ in {
       };
       window.border = 0;
       window.titlebar = false;
+      input = {
+        "1739:0:Synaptics_TM3276-022" = {
+          natural_scroll = "enabled";
+        };
+      };
     };
   };
 }
