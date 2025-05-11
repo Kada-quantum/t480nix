@@ -480,6 +480,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    (lib.hiPrio pkgs.uutils-coreutils-noprefix)
     pwvucontrol
     sway-easyfocus
     codebook
