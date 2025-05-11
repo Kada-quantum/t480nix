@@ -47,7 +47,11 @@
     defaultUserShell = pkgs.zsh;
   };
 
-  security.polkit.enable = true;
+  security = {
+    polkit.enable = true;
+    sudo.enable = false;
+    sudo-rs.enable = true;
+  };
 
   # Time zone
   time.timeZone = "Europe/Budapest";
