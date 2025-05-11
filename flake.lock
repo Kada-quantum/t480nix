@@ -314,13 +314,14 @@
     "maixduino-index": {
       "flake": false,
       "locked": {
+        "lastModified": 1746968187,
         "narHash": "sha256-IOZFGTrumMQb4sbBNNCJgHFJyaywUO6LaKmxDuFmeFU=",
-        "type": "file",
-        "url": "http://dl.sipeed.com/MAIX/Maixduino/package_Maixduino_k210_index.json"
+        "path": "/etc/nixos/package_Maixduino_k210_dl_cdn_index.json",
+        "type": "path"
       },
       "original": {
-        "type": "file",
-        "url": "http://dl.sipeed.com/MAIX/Maixduino/package_Maixduino_k210_index.json"
+        "path": "/etc/nixos/package_Maixduino_k210_dl_cdn_index.json",
+        "type": "path"
       }
     },
     "matrix-account": {

@@ -34,7 +34,8 @@
     };
     maixduino-index = {
       # url = "http://dl.sipeed.com/MAIX/Maixduino/package_Maixduino_k210_index.json";
-      url = "http://dl.sipeed.com/MAIX/Maixduino/package_Maixduino_k210_dl_cdn_index.json";
+      # url = "http://dl.sipeed.com/MAIX/Maixduino/package_Maixduino_k210_dl_cdn_index.json";
+      url = "path:/etc/nixos/package_Maixduino_k210_dl_cdn_index.json";
       flake = false;
       # sha256 = "bea1d6d47977cd16c93edcd25a8ca16410a89880dd7f7f008d88b170ef28c860";
     };
