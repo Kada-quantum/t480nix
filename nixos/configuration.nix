@@ -652,7 +652,7 @@
           model = "drv:///cupsfilters.drv/pwgrast.ppd";
           ppdOptions = {
             PageSize = "A4";
-            ColorModel = "CMYK";
+            PwgRasterDocumentType = "Cmyk_8";
           };
         }
       ];
