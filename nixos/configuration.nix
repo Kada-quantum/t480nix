@@ -192,6 +192,9 @@
       enable = true;
       drivers = with pkgs; [gutenprint];
     };
+    samba = {
+      enable = true;
+    };
 
     # Enable sound.
     pipewire = {
@@ -639,6 +642,17 @@
           model = "gutenprint.${lib.versions.majorMinor (lib.getVersion pkgs.gutenprint)}://bjc-G2000-series/expert";
           ppdOptions = {
             PageSize = "A4";
+          };
+        }
+        {
+          name = "school";
+          description = "school";
+          location = "NORDANGLIA";
+          deviceUri = "smb://10.75.4.20/BUD-FollowMe-Konica";
+          model = "drv:///cupsfilters.drv/pwgrast.ppd";
+          ppdOptions = {
+            PageSize = "A4";
+            ColorModel = "CMYK";
           };
         }
       ];
