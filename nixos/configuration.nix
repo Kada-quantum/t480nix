@@ -653,6 +653,7 @@
           ppdOptions = {
             PageSize = "A4";
             PwgRasterDocumentType = "Cmyk_8";
+            PrintQuality = 5;
           };
         }
       ];
