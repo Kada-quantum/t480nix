@@ -412,10 +412,11 @@
     };
     firefox = {
       enable = true;
-      autoConfig = ''        lockPref("browser.ml.chat.enabled", true);
+      autoConfig = ''
+        lockPref("browser.ml.chat.enabled", true);
         lockPref("browser.ml.chat.sidebar", true);
         lockPref("browser.ml.chat.hideLocalhost", false);
-        lockPref("browser.ml.chat.provider", "http://localhost:8080/?model=deepseek-r1:1.5bq4KM&temporary-chat=true");
+        lockPref("browser.ml.chat.provider", "http://localhost:8080/?model=gemma3:latest&temporary-chat=true");
       '';
       # Check about:policies#documentation for options.
       policies = {
