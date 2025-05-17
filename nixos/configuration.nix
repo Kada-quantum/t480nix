@@ -484,6 +484,8 @@
   };
 
   environment.systemPackages = with pkgs; [
+    libnotify
+    jaq
     (lib.hiPrio pkgs.uutils-coreutils-noprefix)
     pwvucontrol
     sway-easyfocus

@@ -132,6 +132,12 @@ in {
       keybindings = lib.mkOptionDefault {
         "${modifier}+Shift+e" = "exec swaymsg exit";
         "${modifier}+Tab" = "exec sway-easyfocus";
+        # "${modifier}+Shift+i" = "exec grim -g \"$(slurp -r <<< $(swaymsg -t get_tree | jaq -r '[.. | ((.nodes? // empty) + (.floating_nodes? // empty))[] | select(.visible and .pid)]' | jaq -r '.[] | \"\\(.rect.x),\\(.rect.y) \\(.rect.width)x\\(.rect.height) \\(.name)\"'))\" /home/kada/Pictures/ScreenShots/$(date -I ns).png && notify-send \"saved\"";
+        # "${modifier}+Shift+w" = "exec grim -g '$(slurp -r <<< $(swaymsg -t get_tree | jaq -r '[.. | ((.nodes? // empty) + (.floating_nodes? // empty))[] | select(.visible and .pid)]' | jaq -r '.[] | \\'\\(.rect.x),\\(.rect.y) \\(.rect.width)x\\(.rect.height) \\(.name)\\''))' /home/kada/Pictures/ScreenShots/$(date -I ns).png && notify-send \"saved\"";
+        "${modifier}+Shift+w" = ''exec grim -g "$(slurp -r <<< "$(swaymsg -t get_tree | jaq -r '[.. | ((.nodes? // empty) + (.floating_nodes? // empty))[] | select(.visible and .pid)]' | jaq -r '.[] | "\(.rect.x),\(.rect.y) \(.rect.width)x\(.rect.height) \(.name)"')")" /home/kada/Pictures/ScreenShots/$(date -I ns).png && notify-send "saved"'';
+        "${modifier}+Shift+r" = ''exec grim -g "$(slurp)" /home/kada/Pictures/ScreenShots/$(date -I ns).png && notify-send "saved"'';
+        "${modifier}+Shift+s" = ''exec grim -o "$(swaymsg -t get_outputs | jaq -r '.[] | select(.focused) | .name')" /home/kada/Pictures/ScreenShots/$(date -I ns).png && notify-send "saved"'';
+        "Print" = ''exec grim - | wl-copy && notify-send "copied"'';
         "XF86MonBrightnessDown" = "exec brightnessctl set 1%- | sed -En 's/.*\\(([0-9]+)%\\).*/\\1/p' > $(systemctl show --user wob.socket -p Listen | sed 's/Listen=//' | cut -d' ' -f1)";
         "XF86MonBrightnessUp" = "exec brightnessctl set 1%+ | sed -En 's/.*\\(([0-9]+)%\\).*/\\1/p' > $(systemctl show --user wob.socket -p Listen | sed 's/Listen=//' | cut -d' ' -f1)";
         "XF86AudioRaiseVolume" = "exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%+ && wpctl get-volume @DEFAULT_AUDIO_SINK@ | sed 's/[^0-9]//g' > $(systemctl show --user wob.socket -p Listen | sed 's/Listen=//' | cut -d' ' -f1)";
@@ -145,6 +151,9 @@ in {
       window.border = 0;
       window.titlebar = false;
       input = {
+        "*" = {
+          xkb_options = "compose:lwin";
+        };
         "1739:0:Synaptics_TM3276-022" = {
           natural_scroll = "enabled";
         };
