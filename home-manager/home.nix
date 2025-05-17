@@ -21,6 +21,7 @@
     enable = true;
     profiles = ["default" "school"];
     config = {
+      displayTitles = false;
       font = {
         family = "Hasklig";
       };
@@ -34,10 +35,24 @@
       ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░
       '';
       displayNavButtons = true;
-      tabs.vertical.margin = "none";
+      tabs.vertical.margin = "0px";
       border = {
         transition = "none";
       };
+      icons = {
+        toolbar.extensions.enable = true;
+        context.extensions.enable = true;
+      };
+      extraConfig = ''
+        @-moz-document url("about:home"), url("about:newtab") {
+          .logo-and-wordmark-wrapper {
+            height: 256px;
+            .wordmark {
+              height: 256px;
+            }
+          }
+        }
+      '';
     };
   };
 

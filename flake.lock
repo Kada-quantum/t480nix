@@ -355,11 +355,11 @@
     },
     "nixpkgs-unstable": {
       "locked": {
-        "lastModified": 1747452614,
-        "narHash": "sha256-hSEz6JHZTJJTeIudt0SK3UoZnfThHwKCUGvSe5/zn8g=",
+        "lastModified": 1747504449,
+        "narHash": "sha256-buLbkxDemkwIsTe4rwK/yVW4sl8Z9wlX9xPTcckXmTA=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "e067fb89ac3e59f993f257c799318132f1492f01",
+        "rev": "6315e9c1c21f6ed5054b815c5aee7512e9a019f2",
         "type": "github"
       },
       "original": {
@@ -371,32 +371,17 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1728492678,
-        "narHash": "sha256-9UTxR8eukdg+XZeHgxW5hQA9fIKHsKCdOIUycTryeVw=",
+        "lastModified": 1747327360,
+        "narHash": "sha256-LSmTbiq/nqZR9B2t4MRnWG7cb0KVNU70dB7RT4+wYK4=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "5633bcff0c6162b9e4b5f1264264611e950c8ec7",
+        "rev": "e06158e58f3adee28b139e9c2bcfcc41f8625b46",
         "type": "github"
       },
       "original": {
         "owner": "nixos",
         "ref": "nixos-unstable",
         "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nur": {
-      "locked": {
-        "lastModified": 1729125404,
-        "narHash": "sha256-2ZtXYNBPi9Ejeb2Heqh+yFTBcstapvtna8Vyl/ugb7w=",
-        "owner": "nix-community",
-        "repo": "NUR",
-        "rev": "7aafd5f0d772efbd2e611c132cc290c3508fe049",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-community",
-        "repo": "NUR",
         "type": "github"
       }
     },
@@ -535,15 +520,14 @@
     },
     "textfox": {
       "inputs": {
-        "nixpkgs": "nixpkgs_2",
-        "nur": "nur"
+        "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1747492315,
-        "narHash": "sha256-XMY1n+aGs4z/aI7um/JzaB7Pb50GzojJkFod5XdUM4Q=",
+        "lastModified": 1747524787,
+        "narHash": "sha256-Tmb41cttdvCXpQ5cA2GOQXtZNIlYW/dsghKBGFBq9q4=",
         "owner": "Kada-quantum",
         "repo": "textfox",
-        "rev": "2cf8b221f2ad50992bd46fb4331217856c2cc6d3",
+        "rev": "5110b150a353165c31a6c6b07557daba2bc3d316",
         "type": "github"
       },
       "original": {
