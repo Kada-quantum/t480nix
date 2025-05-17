@@ -440,6 +440,7 @@
           "uBlock0@raymondhill.net" = {
             install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
             installation_mode = "force_installed";
+            default_area = "menupanel";
           };
           # Privacy Badger:
           "jid1-MnnxcxisBPnSXQ@jetpack" = {
@@ -460,10 +461,21 @@
           "@testpilot-containers" = {
             install_url = "https://addons.mozilla.org/firefox/downloads/latest/multi-account-containers/latest.xpi";
             installation_mode = "force_installed";
+            default_area = "menupanel";
           };
           # ff2mpv
           "ff2mpv@yossarian.net" = {
             install_url = "https://addons.mozilla.org/firefox/downloads/latest/ff2mpv/latest.xpi";
+            installation_mode = "force_installed";
+          };
+          # Port Authority
+          "{6c00218c-707a-4977-84cf-36df1cef310f}" = {
+            install_url = "https://addons.mozilla.org/firefox/downloads/latest/port-authority/latest.xpi";
+            installation_mode = "force_installed";
+          };
+          # Sidebery
+          "{3c078156-979c-498b-8990-85f7987dd929}" = {
+            install_url = "https://addons.mozilla.org/firefox/downloads/latest/sidebery/latest.xpi";
             installation_mode = "force_installed";
           };
         };
