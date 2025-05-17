@@ -8,6 +8,7 @@
 }: {
   imports = [
     outputs.homeManagerModules.sway
+    inputs.textfox.homeManagerModules.default
   ];
 
   programs.firefox = {
@@ -15,6 +16,17 @@
       id = 1;
     };
   };
+
+  textfox = {
+    enable = true;
+    profile = "default";
+    config = {
+      font = {
+        family = "Hasklig";
+      };
+    };
+  };
+
   xdg = {
     configFile.iamb = {
       enable = true;

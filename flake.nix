@@ -26,6 +26,7 @@
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    textfox.url = "github:adriankarlen/textfox";
 
     arduino-nix.url = "github:bouk/arduino-nix";
     arduino-index = {
