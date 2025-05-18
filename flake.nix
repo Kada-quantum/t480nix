@@ -24,7 +24,7 @@
 
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
     # textfox.url = "github:adriankarlen/textfox";
     textfox.url = "github:Kada-quantum/textfox";

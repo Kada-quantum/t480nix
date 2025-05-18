@@ -7,6 +7,7 @@
     spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
   in {
     enable = true;
+    spicetifyPackage = pkgs.unstable.spicetify-cli;
     enabledExtensions = [
       {
         src = "${pkgs.fetchFromGitHub {
@@ -24,8 +25,8 @@
     #   shuffle # shuffle+ (special characters are sanitized out of extension names)
     # ];
     wayland = true;
-    theme = spicePkgs.themes.onepunch;
-    colorScheme = "dark";
+    theme = spicePkgs.themes.text;
+    colorScheme = "Gruvbox";
   };
   stylix = {
     enable = true;
