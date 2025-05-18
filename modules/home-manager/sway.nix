@@ -105,6 +105,7 @@ in {
   services.wob.enable = true;
   wayland.windowManager.sway = {
     enable = true;
+    xwayland = false;
     config = {
       inherit modifier;
       defaultWorkspace = "workspace number 1";
