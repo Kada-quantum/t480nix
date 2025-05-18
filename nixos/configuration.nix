@@ -412,12 +412,13 @@
     };
     firefox = {
       enable = true;
-      autoConfig = ''
-        lockPref("browser.ml.chat.enabled", true);
-        lockPref("browser.ml.chat.sidebar", true);
-        lockPref("browser.ml.chat.hideLocalhost", false);
-        lockPref("browser.ml.chat.provider", "http://localhost:8080/?model=gemma3:latest&temporary-chat=true");
-      '';
+      preferences = {
+        "browser.ml.chat.enabled" = true;
+        "browser.ml.chat.sidebar" = true;
+        "browser.ml.chat.hideLocalhost" = false;
+        "browser.ml.chat.provider" = "http://localhost:8080/?model=gemma3:latest&temporary-chat=true";
+        "browser.ml.linkPreview.enabled" = true;
+      };
       # Check about:policies#documentation for options.
       policies = {
         DisableTelemetry = true;
