@@ -1,6 +1,7 @@
 {
   pkgs,
   inputs,
+  config,
   ...
 }: {
   programs.spicetify = let
@@ -26,7 +27,23 @@
     # ];
     wayland = true;
     theme = spicePkgs.themes.text;
-    colorScheme = "Gruvbox";
+    # colorScheme = "Gruvbox";
+    colorScheme = "custom";
+    customColorScheme = with config.lib.stylix.colors; {
+      "accent" = "${green}";
+      "accent-active" = "${green}";
+      "accent-inactive" = "${base00}";
+      "banner" = "${green}";
+      "border-active" = "${green}";
+      "border-inactive" = "${base01}";
+      "header" = "${base03}";
+      "highlight" = "${base03}";
+      "main" = "${base00}";
+      "notification" = "${cyan}";
+      "notification-error" = "${red}";
+      "subtext" = "${base04}";
+      "text" = "${base07}";
+    };
   };
   stylix = {
     enable = true;
