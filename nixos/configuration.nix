@@ -654,7 +654,7 @@
           name = "Canon-G2410";
           description = "Canon G2410";
           location = "knixa";
-          deviceUri = "usb://Canon/G2010%20series?serial=A89C9E&interface=1";
+          deviceUri = "usb://Canon/G2010%20series?serial=B2CED4&interface=1";
           model = "gutenprint.${lib.versions.majorMinor (lib.getVersion pkgs.gutenprint)}://bjc-G2000-series/expert";
           ppdOptions = {
             PageSize = "A4";
