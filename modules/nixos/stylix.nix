@@ -99,6 +99,7 @@
     cursor = {
       package = pkgs.simp1e-cursors;
       name = "Simp1e-Gruvbox-Dark";
+      size = 32;
     };
     targets.spicetify.enable = false;
   };

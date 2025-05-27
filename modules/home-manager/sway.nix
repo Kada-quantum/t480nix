@@ -101,7 +101,7 @@ in {
     ];
   };
   services.mako.enable = true;
-  services.mako.defaultTimeout = 3000;
+  services.mako.settings.default-timeout = 3000;
   services.wob.enable = true;
   wayland.windowManager.sway = {
     enable = true;
