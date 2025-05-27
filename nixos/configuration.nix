@@ -572,7 +572,6 @@
     typst
     typstyle
     tinymist
-    torzu
     strace
     strace-analyzer
     pciutils
