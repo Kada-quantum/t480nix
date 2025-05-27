@@ -31,5 +31,4 @@
     zoxide.enable = true;
     skim.enable = true;
   };
-  qt.enable = true;
 }

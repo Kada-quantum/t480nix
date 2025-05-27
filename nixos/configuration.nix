@@ -85,12 +85,6 @@
     };
   };
 
-  qt = {
-    enable = true;
-    style = "adwaita-dark";
-    platformTheme = "gnome";
-  };
-
   console = {
     # font = "${pkgs.tamzen}/share/consolefonts/TamzenForPowerline10x20.psf";
     keyMap = "us";
