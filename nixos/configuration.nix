@@ -557,7 +557,7 @@
     gtk4
     unstable.helix
     bat
-    mupdf
+    zathura
     fenix.stable.completeToolchain
     lldb
     carapace
