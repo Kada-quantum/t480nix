@@ -12,6 +12,9 @@
     #   dark = "candy-icons";
     #   light = "candy-icons";
     # };
-    targets = {helix.enable = false;};
+    targets = {
+      helix.enable = false;
+      firefox.profileNames = ["default" "school"];
+    };
   };
 }
