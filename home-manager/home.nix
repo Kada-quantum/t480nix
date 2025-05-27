@@ -44,6 +44,11 @@
         context.extensions.enable = true;
       };
       extraConfig = ''
+        @-moz-document regexp("^moz-extension://.*?/sidebar/sidebar.html") {
+          .Tab .fav, .Tab .fav-icon {
+            filter: grayscale(100%) !important;
+          }
+        }
         @-moz-document url("about:home"), url("about:newtab") {
           .logo-and-wordmark-wrapper {
             height: 256px;
