@@ -18,7 +18,7 @@
   #   voicevox-engine = pkgs.callPackage "${git}/pkgs/by-name/vo/voicevox-engine/package.nix" {inherit voicevox-core;};
   # in
   #   pkgs.callPackage "${git}/pkgs/by-name/vo/voicevox/package.nix" {inherit voicevox-engine;};
-  spotblock-rs = pkgs.callPackage ./spotblock-rs.nix {};
+  spotblock-rs = pkgs.callPackage ./spotblock-rs.nix {inherit craneLib;};
   open-webui = pkgs.unstable.callPackage ./open-webui.nix {};
   codebook = pkgs.callPackage ./codebook.nix {inherit craneLib;};
 }

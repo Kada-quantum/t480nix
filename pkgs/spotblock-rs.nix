@@ -4,12 +4,11 @@
   writeShellApplication,
   lib,
   fetchFromGitHub,
-  rustPlatform,
+  craneLib,
 }:
-rustPlatform.buildRustPackage {
+craneLib.buildPackage {
   pname = "spotblock-rs";
   version = "0.1.0";
-
   src = fetchFromGitHub {
     owner = "KivalM";
     repo = "spotblock-rs";
@@ -18,13 +17,10 @@ rustPlatform.buildRustPackage {
     fetchSubmodules = false;
     hash = "sha256-8WJ+GRWSkMpJfR59E2ZuMfaYXL6fqpCeMw45s4MwLGk=";
   };
-
-  cargoHash = "sha256-PfGgv2lD7OZ0azvLteTaUiD57byfC49QDcFkZ2ufiOY=";
-
   postInstall = let
     script = writeShellApplication {
       name = "spotblock-run";
-      runtimeInputs = with pkgs; [ killall ];
+      runtimeInputs = with pkgs; [killall];
       text = ''
         spotblock-rs &
         spotify
@@ -35,7 +31,7 @@ rustPlatform.buildRustPackage {
       name = "Spotblock";
       desktopName = name;
       exec = "spotblock-run";
-      comment="Launch spotify with blocked ads";
+      comment = "Launch spotify with blocked ads";
       terminal = false;
       type = "Application";
       icon = "Spotify";
