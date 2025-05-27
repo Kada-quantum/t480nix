@@ -506,11 +506,7 @@
     clang
     mold-wrapped
     spotblock-rs
-    (pkgs.buildFHSUserEnv {
-      name = "pixi";
-      runScript = "pixi";
-      targetPkgs = pkgs: with pkgs; [pixi];
-    })
+    pixi
     python3Minimal
     (
       wrapArduinoCLI
