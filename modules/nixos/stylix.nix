@@ -25,6 +25,9 @@
     #   hidePodcasts
     #   shuffle # shuffle+ (special characters are sanitized out of extension names)
     # ];
+    enabledSnippets = [
+      (builtins.readFile ./no_premium.css)
+    ];
     wayland = true;
     theme = spicePkgs.themes.text;
     # colorScheme = "Gruvbox";
