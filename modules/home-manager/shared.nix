@@ -30,5 +30,6 @@
     };
     zoxide.enable = true;
     skim.enable = true;
+    zathura.enable = true;
   };
 }
