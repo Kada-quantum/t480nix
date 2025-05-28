@@ -17,5 +17,6 @@
       firefox.profileNames = ["default" "school"];
     };
     targets.sway.useWallpaper = false;
+    targets.wofi.enable = false;
   };
 }

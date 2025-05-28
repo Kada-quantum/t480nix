@@ -6,6 +6,15 @@
 }: let
   modifier = "Mod1";
 in {
+  programs.wofi = {
+    enable = true;
+    style = ''
+      * {
+      	border: 5px;
+        border-radius: 0;
+      }
+    '';
+  };
   programs.waybar = {
     enable = true;
     settings = [
@@ -121,7 +130,7 @@ in {
       };
       focus.mouseWarping = "container";
       bars = [{command = "waybar";}];
-      menu = "wofi -S drun -D key_expand=Tab";
+      menu = "wofi -S drun -D key_expand=Tab -b";
       terminal = "alacritty";
       startup = [
         {
@@ -168,7 +177,13 @@ in {
         {
           command = "opacity 0.96";
           criteria = {
-            app_id = "^(firefox|Alacritty)$";
+            app_id = "^(firefox|Alacritty|spotify)$";
+          };
+        }
+        {
+          command = "opacity 0.8";
+          criteria = {
+            app_id = "wofi";
           };
         }
       ];
