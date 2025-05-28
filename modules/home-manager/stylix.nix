@@ -16,5 +16,6 @@
       helix.enable = false;
       firefox.profileNames = ["default" "school"];
     };
+    targets.sway.useWallpaper = false;
   };
 }

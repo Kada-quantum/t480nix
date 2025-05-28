@@ -47,7 +47,7 @@
   };
   stylix = {
     enable = true;
-    image = ./wallpaper.jpeg;
+    image = inputs.wallim;
     polarity = "dark";
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/horizon-light.yaml";
     base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
@@ -63,7 +63,7 @@
       base0F = "d65d0e"; # brown
     };
     opacity = {
-      terminal = 0.8;
+      terminal = 0.9;
       # application = 1.0;
       desktop = 0.9;
       popups = 0.8;

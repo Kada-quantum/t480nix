@@ -424,7 +424,9 @@
         "searx-secret": "searx-secret",
         "spicetify-nix": "spicetify-nix",
         "stylix": "stylix",
-        "textfox": "textfox"
+        "textfox": "textfox",
+        "wallim": "wallim",
+        "wallmv": "wallmv"
       }
     },
     "rust-analyzer-src": {
@@ -665,6 +667,32 @@
         "owner": "numtide",
         "repo": "treefmt-nix",
         "type": "github"
+      }
+    },
+    "wallim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1742142063,
+        "narHash": "sha256-RSVju9SG425PuGyn9SRK8UvZon9ysdM7L3nPHBp5J2g=",
+        "path": "/etc/nixos/wallpaper.jpeg",
+        "type": "path"
+      },
+      "original": {
+        "path": "/etc/nixos/wallpaper.jpeg",
+        "type": "path"
+      }
+    },
+    "wallmv": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1748443741,
+        "narHash": "sha256-7Sha4SCh+ODPBeL1IcyXA3nO3FiWBVwtPBw8k3u22pM=",
+        "path": "/etc/nixos/wall.mp4",
+        "type": "path"
+      },
+      "original": {
+        "path": "/etc/nixos/wall.mp4",
+        "type": "path"
       }
     }
   },

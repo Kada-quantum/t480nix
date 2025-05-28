@@ -491,6 +491,9 @@
   };
 
   environment.systemPackages = with pkgs; [
+    waytrogen
+    swww
+    mpvpaper
     libnotify
     jaq
     (lib.hiPrio pkgs.uutils-coreutils-noprefix)

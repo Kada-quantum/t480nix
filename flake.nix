@@ -49,6 +49,14 @@
       url = "path:/etc/nixos/searx.secret";
       flake = false;
     };
+    wallmv = {
+      url = "path:/etc/nixos/wall.mp4";
+      flake = false;
+    };
+    wallim = {
+      url = "path:/etc/nixos/wallpaper.jpeg";
+      flake = false;
+    };
   };
 
   outputs = {
