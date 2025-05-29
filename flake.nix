@@ -28,6 +28,10 @@
     };
     # textfox.url = "github:adriankarlen/textfox";
     textfox.url = "github:Kada-quantum/textfox";
+    nixcord = {
+      url = "github:Kada-quantum/nixcord/vesktop-override";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
 
     arduino-nix.url = "github:bouk/arduino-nix";
     arduino-index = {
@@ -110,6 +114,7 @@
               outputs.homeManagerModules.helix
               outputs.homeManagerModules.git
               outputs.homeManagerModules.shared
+              inputs.nixcord.homeModules.nixcord
             ];
           }
           stylix.nixosModules.stylix

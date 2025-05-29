@@ -154,6 +154,20 @@
       "locked": {
         "lastModified": 1733328505,
         "narHash": "sha256-NeCCThCEP3eCl2l/+27kNNK7QrwZB1IJCrXfrbv5oqU=",
+        "rev": "ff81ac966bb2cae68946d5ed5fc4994f96d0ffec",
+        "revCount": 69,
+        "type": "tarball",
+        "url": "https://api.flakehub.com/f/pinned/edolstra/flake-compat/1.1.0/01948eb7-9cba-704f-bbf3-3fa956735b52/source.tar.gz?rev=ff81ac966bb2cae68946d5ed5fc4994f96d0ffec&revCount=69"
+      },
+      "original": {
+        "type": "tarball",
+        "url": "https://flakehub.com/f/edolstra/flake-compat/1.tar.gz"
+      }
+    },
+    "flake-compat_2": {
+      "locked": {
+        "lastModified": 1733328505,
+        "narHash": "sha256-NeCCThCEP3eCl2l/+27kNNK7QrwZB1IJCrXfrbv5oqU=",
         "owner": "edolstra",
         "repo": "flake-compat",
         "rev": "ff81ac966bb2cae68946d5ed5fc4994f96d0ffec",
@@ -336,6 +350,28 @@
         "type": "path"
       }
     },
+    "nixcord": {
+      "inputs": {
+        "flake-compat": "flake-compat",
+        "nixpkgs": [
+          "nixpkgs-unstable"
+        ]
+      },
+      "locked": {
+        "lastModified": 1748536625,
+        "narHash": "sha256-r0hkaCgFneKGDxWGBXKw9vgpQu/k8hVqZ07EgItne8s=",
+        "owner": "Kada-quantum",
+        "repo": "nixcord",
+        "rev": "d27bbcbb5c7c53dad074cdc067257d9dbc9ba6a3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Kada-quantum",
+        "ref": "vesktop-override",
+        "repo": "nixcord",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1748162331,
@@ -419,6 +455,7 @@
         "home-manager": "home-manager",
         "maixduino-index": "maixduino-index",
         "matrix-account": "matrix-account",
+        "nixcord": "nixcord",
         "nixpkgs": "nixpkgs",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "searx-secret": "searx-secret",
@@ -487,7 +524,7 @@
         "base16-helix": "base16-helix",
         "base16-vim": "base16-vim",
         "firefox-gnome-theme": "firefox-gnome-theme",
-        "flake-compat": "flake-compat",
+        "flake-compat": "flake-compat_2",
         "flake-parts": "flake-parts",
         "git-hooks": "git-hooks",
         "gnome-shell": "gnome-shell",

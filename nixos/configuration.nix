@@ -599,7 +599,6 @@
     vulkan-tools
     autotiling-rs
     discordo
-    vesktop
     alejandra
     nixd
     mpv
