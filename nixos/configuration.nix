@@ -60,18 +60,18 @@
   i18n = {
     defaultLocale = "en_US.UTF-8";
     supportedLocales = lib.unique (builtins.map (l: (lib.replaceStrings ["utf8" "utf-8" "UTF8"] ["UTF-8" "UTF-8" "UTF-8"] l) + "/UTF-8") (["C.UTF-8" "en_US.UTF-8" config.i18n.defaultLocale] ++ (lib.attrValues (lib.filterAttrs (n: v: n != "LANGUAGE") config.i18n.extraLocaleSettings))));
-    inputMethod = {
-      enable = true;
-      type = "fcitx5";
-      fcitx5 = {
-        waylandFrontend = true;
-        addons = with pkgs; [
-          fcitx5-mozc
-          fcitx5-mozc-ut
-          fcitx5-gtk
-        ];
-      };
-    };
+    # inputMethod = {
+    #   enable = true;
+    #   type = "fcitx5";
+    #   fcitx5 = {
+    #     waylandFrontend = true;
+    #     addons = with pkgs; [
+    #       # fcitx5-mozc
+    #       fcitx5-mozc-ut
+    #       fcitx5-gtk
+    #     ];
+    #   };
+    # };
   };
 
   # services.xserver.desktopManager.runXdgAutostartIfNone = true;

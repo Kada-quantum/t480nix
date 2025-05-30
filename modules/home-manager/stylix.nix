@@ -19,6 +19,7 @@
     targets.sway.useWallpaper = false;
     targets.wofi.enable = false;
     targets.nixcord.enable = false;
+    targets.fcitx5.enable = true;
   };
   programs.nixcord = {
     enable = true;
