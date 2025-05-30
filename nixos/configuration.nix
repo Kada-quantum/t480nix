@@ -491,6 +491,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    onefetch
     waytrogen
     swww
     mpvpaper

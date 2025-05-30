@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{pkgs, lib, ...}: {
   i18n.inputMethod = {
     enable = true;
     type = "fcitx5";
@@ -39,6 +39,34 @@
         expireDuplicatesFirst = true;
         size = 1000000;
       };
+      initContent = lib.mkOrder 3000 ''
+        # git repository greeter
+        last_repository=
+        check_directory_for_new_repository() {
+          current_repository=$(git rev-parse --show-toplevel 2> /dev/null)
+
+          if [ "$current_repository" ] && [ "$current_repository" != "$last_repository" ]; then
+            onefetch
+          fi
+          last_repository=$current_repository
+        }
+        cd() {
+          builtin cd "$@"
+          check_directory_for_new_repository
+        }
+        z() {
+          __zoxide_z "$@"
+          check_directory_for_new_repository
+        }
+        zi() {
+          __zoxide_zi "$@"
+          check_directory_for_new_repository
+        }
+
+        # optional, greet also when opening shell directly in repository directory
+        # adds time to startup
+        # check_directory_for_new_repository
+      '';
     };
     zoxide.enable = true;
     skim.enable = true;
