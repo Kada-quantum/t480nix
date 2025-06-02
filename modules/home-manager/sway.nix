@@ -177,7 +177,7 @@ in {
         {
           command = "opacity 0.96";
           criteria = {
-            app_id = "^(firefox|Alacritty|spotify|org\.pwmt\.zathura)$";
+            app_id = "^(firefox|Alacritty|spotify|org\.pwmt\.zathura|vesktop)$";
           };
         }
         {

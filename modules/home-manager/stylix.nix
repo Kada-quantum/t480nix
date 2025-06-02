@@ -25,6 +25,11 @@
     enable = true;
     discord.enable = false;
     vesktop.enable = true;
+    quickCss = ''
+        * {
+          border-radius: 0px;
+        }
+      '';
     config = {
       useQuickCss = true;
       themeLinks = [
