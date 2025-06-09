@@ -92,6 +92,7 @@
 
   fonts = {
     packages = with pkgs; [
+      stix-two
       tamzen
       hasklig
       manrope
