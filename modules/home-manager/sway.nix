@@ -162,6 +162,7 @@ in {
         "XF86AudioPlay" = "exec playerctl start-pause";
         "XF86AudioPause" = "exec playerctl start-pause";
         "XF86AudioNext" = "exec playerctl next";
+        "XF86AudioPrev" = "exec playerctl previous";
       };
       window.border = 0;
       window.titlebar = false;
