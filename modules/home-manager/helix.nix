@@ -68,6 +68,11 @@
             formatter = {command = "typstyle";};
           }
           {
+            name = "xml";
+            auto-format = true;
+            formatter = {command = "xmlstarlet"; args = ["fo"];};
+          }
+          {
             name = "markdown";
             # language-servers = ["markdown-oxide" "marksman" "codebook"];
             language-servers = ["markdown-oxide" "codebook"];
