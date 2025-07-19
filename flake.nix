@@ -61,6 +61,10 @@
       url = "path:/etc/nixos/wallpaper.jpeg";
       flake = false;
     };
+    wayland-pipewire-idle-inhibit = {
+      url = "github:rafaelrc7/wayland-pipewire-idle-inhibit";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -115,6 +119,7 @@
               outputs.homeManagerModules.git
               outputs.homeManagerModules.shared
               inputs.nixcord.homeModules.nixcord
+              inputs.wayland-pipewire-idle-inhibit.homeModules.default
             ];
           }
           stylix.nixosModules.stylix

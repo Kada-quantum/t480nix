@@ -68,9 +68,32 @@
             formatter = {command = "typstyle";};
           }
           {
+            name = "python";
+            language-servers = ["ruff" "codebook"];
+          }
+          {
+            name = "java";
+            language-servers = ["jdtls" "codebook"];
+          }
+          {
+            name = "rust";
+            language-servers = ["rust-analyzer" "codebook"];
+          }
+          {
+            name = "c";
+            language-servers = ["clangd" "codebook"];
+          }
+          {
+            name = "toml";
+            language-servers = ["taplo" "tombi" "codebook"];
+          }
+          {
             name = "xml";
             auto-format = true;
-            formatter = {command = "xmlstarlet"; args = ["fo"];};
+            formatter = {
+              command = "xmlstarlet";
+              args = ["fo"];
+            };
           }
           {
             name = "markdown";
@@ -82,14 +105,14 @@
             roots = ["deno.json" "deno.jsonc" "package.json"];
             file-types = ["ts" "tsx"];
             auto-format = true;
-            language-servers = ["deno-lsp"];
+            language-servers = ["deno-lsp" "codebook"];
           }
           {
             name = "javascript";
             roots = ["deno.json" "deno.jsonc" "package.json"];
             file-types = ["js" "jsx"];
             auto-format = true;
-            language-servers = ["deno-lsp"];
+            language-servers = ["deno-lsp" "codebook"];
           }
         ];
       };
