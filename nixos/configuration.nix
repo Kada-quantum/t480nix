@@ -506,6 +506,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    kiorg
     sic-image-cli
     # scenebuilder23
     android-tools
