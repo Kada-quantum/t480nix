@@ -119,9 +119,9 @@
               outputs.homeManagerModules.git
               outputs.homeManagerModules.shared
               inputs.nixcord.homeModules.nixcord
-              inputs.wayland-pipewire-idle-inhibit.homeModules.default
             ];
           }
+          inputs.wayland-pipewire-idle-inhibit.nixosModules.default
           stylix.nixosModules.stylix
         ];
       };

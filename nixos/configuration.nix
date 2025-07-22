@@ -232,6 +232,20 @@
       };
     };
     tp-auto-kbbl.enable = true;
+    wayland-pipewire-idle-inhibit = {
+      enable = true;
+      package = pkgs.unstable.wayland-pipewire-idle-inhibit;
+      systemdTarget = "sway-session.target";
+      settings = {
+        verbosity = "INFO";
+        media_minimum_duration = 30;
+        idle_inhibitor = "wayland";
+        sink_whitelist = [];
+        node_blacklist = [
+          {name = "spotify";}
+        ];
+      };
+    };
   };
 
   # Programs
@@ -492,7 +506,8 @@
   };
 
   environment.systemPackages = with pkgs; [
-    scenebuilder23
+    sic-image-cli
+    # scenebuilder23
     android-tools
     onefetch
     waytrogen
@@ -688,12 +703,12 @@
 
   specialisation = {
     java.configuration = {
-      system.nixos.tags = [ "legacy_cgroup" ];
-      boot.kernelParams = [ "SYSTEMD_CGROUP_ENABLE_LEGACY_FORCE=1" "systemd.unified_cgroup_hierarchy=0" ];
+      system.nixos.tags = ["legacy_cgroup"];
+      boot.kernelParams = ["SYSTEMD_CGROUP_ENABLE_LEGACY_FORCE=1" "systemd.unified_cgroup_hierarchy=0"];
     };
     javaigpu.configuration = {
-      system.nixos.tags = [ "legacy_cgroup_igpu" ];
-      boot.kernelParams = [ "SYSTEMD_CGROUP_ENABLE_LEGACY_FORCE=1" "systemd.unified_cgroup_hierarchy=0" ];
+      system.nixos.tags = ["legacy_cgroup_igpu"];
+      boot.kernelParams = ["SYSTEMD_CGROUP_ENABLE_LEGACY_FORCE=1" "systemd.unified_cgroup_hierarchy=0"];
       boot.extraModprobeConfig = ''
         blacklist nouveau
         options nouveau modeset=0
