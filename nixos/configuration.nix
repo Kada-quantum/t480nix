@@ -506,7 +506,7 @@
   };
 
   environment.systemPackages = with pkgs; [
-    freecad-wayland
+    freecad-qt6
     kicad
     kiorg
     sic-image-cli
