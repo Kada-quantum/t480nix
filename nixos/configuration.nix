@@ -506,6 +506,8 @@
   };
 
   environment.systemPackages = with pkgs; [
+    freecad-wayland
+    kicad
     kiorg
     sic-image-cli
     # scenebuilder23
