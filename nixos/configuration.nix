@@ -149,6 +149,7 @@
 
   # Services
   services = {
+    ratbagd.enable = true;
     searx = {
       enable = true;
       settings = {
@@ -506,6 +507,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    piper
     freecad-qt6
     kicad
     kiorg
