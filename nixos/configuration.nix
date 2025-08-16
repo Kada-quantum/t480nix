@@ -175,6 +175,7 @@
       enable = true;
       package = pkgs.unstable.open-webui;
       environment = {
+        HOME = "/var/lib/open-webui";
         ANONYMIZED_TELEMETRY = "False";
         DO_NOT_TRACK = "True";
         SCARF_NO_ANALYTICS = "True";
