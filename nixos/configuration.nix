@@ -174,6 +174,16 @@
     open-webui = {
       enable = true;
       package = pkgs.unstable.open-webui;
+      environment = ''
+        {
+          ANONYMIZED_TELEMETRY = "False";
+          DO_NOT_TRACK = "True";
+          SCARF_NO_ANALYTICS = "True";
+          OLLAMA_API_BASE_URL = "http://127.0.0.1:11434";
+          OFFLINE_MODE = "True";
+          SAFE_MODE = "True";
+        }
+      '';
     };
     ollama = {
       enable = true;
