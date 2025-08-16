@@ -181,6 +181,7 @@
         OLLAMA_API_BASE_URL = "http://127.0.0.1:11434";
         OFFLINE_MODE = "True";
         SAFE_MODE = "True";
+        WEBUI_AUTH= "False";
       };
     };
     ollama = {
