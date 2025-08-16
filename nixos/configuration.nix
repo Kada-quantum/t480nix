@@ -175,7 +175,6 @@
       enable = true;
       package = pkgs.unstable.open-webui;
       environment = {
-        HOME = "/var/lib/open-webui";
         STATIC_DIR = "/var/lib/open-webui/static";
         DATA_DIR = "/var/lib/open-webui/data";
         HF_HOME = "/var/lib/open-webui/hf_home";
@@ -185,8 +184,6 @@
         SCARF_NO_ANALYTICS = "True";
         OLLAMA_API_BASE_URL = "http://127.0.0.1:11434";
         OFFLINE_MODE = "True";
-        SAFE_MODE = "True";
-        WEBUI_AUTH = "False";
       };
     };
     ollama = {
