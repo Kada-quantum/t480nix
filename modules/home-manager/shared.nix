@@ -1,4 +1,8 @@
-{pkgs, lib, ...}: {
+{
+  pkgs,
+  lib,
+  ...
+}: {
   services.mpris-proxy.enable = true;
   i18n.inputMethod = {
     enable = true;
@@ -40,34 +44,45 @@
         expireDuplicatesFirst = true;
         size = 1000000;
       };
-      initContent = lib.mkOrder 3000 ''
-        # git repository greeter
-        last_repository=
-        check_directory_for_new_repository() {
-          current_repository=$(git rev-parse --show-toplevel 2> /dev/null)
+      initContent = let
+        alias = lib.mkOrder 1000 ''
+          alias lo="ls"
+          alias ls="eza"
+          alias ll="eza -lh"
+          alias la="eza -a"
+          alias lla="eza -la"
+          alias lt="eza -T"
+        '';
+        last = lib.mkOrder 3000 ''
+          # git repository greeter
+          last_repository=
+          check_directory_for_new_repository() {
+            current_repository=$(git rev-parse --show-toplevel 2> /dev/null)
 
-          if [ "$current_repository" ] && [ "$current_repository" != "$last_repository" ]; then
-            onefetch
-          fi
-          last_repository=$current_repository
-        }
-        cd() {
-          builtin cd "$@"
-          check_directory_for_new_repository
-        }
-        z() {
-          __zoxide_z "$@"
-          check_directory_for_new_repository
-        }
-        zi() {
-          __zoxide_zi "$@"
-          check_directory_for_new_repository
-        }
+            if [ "$current_repository" ] && [ "$current_repository" != "$last_repository" ]; then
+              onefetch
+            fi
+            last_repository=$current_repository
+          }
+          cd() {
+            builtin cd "$@"
+            check_directory_for_new_repository
+          }
+          z() {
+            __zoxide_z "$@"
+            check_directory_for_new_repository
+          }
+          zi() {
+            __zoxide_zi "$@"
+            check_directory_for_new_repository
+          }
 
-        # optional, greet also when opening shell directly in repository directory
-        # adds time to startup
-        # check_directory_for_new_repository
-      '';
+          # optional, greet also when opening shell directly in repository directory
+          # adds time to startup
+          # check_directory_for_new_repository
+        '';
+      in
+        lib.mkMerge [alias last];
     };
     zoxide.enable = true;
     skim.enable = true;

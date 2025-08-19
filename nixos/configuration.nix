@@ -518,6 +518,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    eza
     piper
     freecad-qt6
     kicad
