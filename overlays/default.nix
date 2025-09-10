@@ -2,7 +2,7 @@
 {inputs, ...}: {
   # Includes custom packages in pkgs
   additions = final: _prev: let
-    craneLib = (inputs.crane.mkLib final.pkgs).overrideToolchain (p: final.pkgs.fenix.minimal.toolchain);
+    craneLib = (inputs.crane.mkLib final.pkgs).overrideToolchain (p: final.pkgs.fenix.stable.minimalToolchain);
   in
     import ../pkgs {
       pkgs = final.pkgs;
