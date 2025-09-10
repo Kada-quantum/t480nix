@@ -549,7 +549,6 @@
     clang
     mold-wrapped
     spotblock-rs
-    pixi
     python3Minimal
     (
       wrapArduinoCLI
