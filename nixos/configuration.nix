@@ -189,7 +189,11 @@
     ollama = {
       enable = true;
       acceleration = "cuda";
-      package = pkgs.unstable.ollama;
+      package = pkgs.unstable.ollama.override {cudaArches = ["61"];};
+      environmentVariables = {
+        OLLAMA_NEW_ESTIMATES = "1";
+        OLLAMA_FLASH_ATTENTION = "1";
+      };
     };
     playerctld.enable = true;
     dbus.implementation = "broker";
