@@ -266,6 +266,19 @@
 
   # Programs
   programs = {
+    chromium = {
+      enable = true;
+      enablePlasmaBrowserIntegration = false;
+      plasmaBrowserIntegrationPackage = pkgs.plasma6Packages.plasma-browser-integration;
+      extraOpts = {
+        "PasswordManagerEnabled" = false;
+      };
+      extensions = [
+        "egjidjbpglichdcondbcbdnbeeppgdph" # Trust Wallet
+        "ponfpcnoihfmfllpaingbgckeeldkhle" # Enhancer for YouTube
+        "nngceckbapebfimnlniiiahkandclblb" # BitWarden
+      ];
+    };
     starship = {
       enable = true;
       settings = {

@@ -67,6 +67,7 @@
   wayland-ime = final: prev: {
     brave = prev.brave.override {
       commandLineArgs = [
+        "--password-store=libsecret"
         "--ignore-gpu-blocklist"
         "--enable-zero-copy"
         "--enable-wayland-ime"
