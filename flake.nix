@@ -27,7 +27,7 @@
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
     # textfox.url = "github:adriankarlen/textfox";
-    textfox.url = "github:Kada-quantum/textfox";
+    textfox.url = "github:Kada-quantum/textfox/update";
     nixcord = {
       url = "github:Kada-quantum/nixcord/vesktop-override";
       inputs.nixpkgs.follows = "nixpkgs-unstable";

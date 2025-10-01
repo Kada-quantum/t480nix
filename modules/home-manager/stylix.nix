@@ -1,7 +1,6 @@
 {
-# {
   gtk.iconTheme = {
-      name = "Sweet-Mars";
+    name = "Sweet-Mars";
   };
   stylix = {
     # iconTheme = {
@@ -14,22 +13,27 @@
     # };
     targets = {
       helix.enable = false;
+      # firefox = {
+      #   enable = true;
+      #   colorTheme.enable = true;
+      #   profileNames = ["default" "school"];
+      # };
       firefox.profileNames = ["default" "school"];
+      sway.useWallpaper = false;
+      wofi.enable = false;
+      nixcord.enable = false;
+      fcitx5.enable = true;
     };
-    targets.sway.useWallpaper = false;
-    targets.wofi.enable = false;
-    targets.nixcord.enable = false;
-    targets.fcitx5.enable = true;
   };
   programs.nixcord = {
     enable = true;
     discord.enable = false;
     vesktop.enable = true;
     quickCss = ''
-        * {
-          border-radius: 0px;
-        }
-      '';
+      * {
+        border-radius: 0px;
+      }
+    '';
     config = {
       useQuickCss = true;
       themeLinks = [
