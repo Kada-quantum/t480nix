@@ -55,6 +55,11 @@
             filter: grayscale(100%) !important;
           }
         }
+        @-moz-document url("about:newtab") {
+          body {
+              background-color: ${config.lib.stylix.colors.withHashtag.base00} !important;
+          }
+        }
         @-moz-document url("about:home"), url("about:newtab") {
           .logo-and-wordmark-wrapper {
             height: 256px;

@@ -692,8 +692,8 @@
     "wallim": {
       "flake": false,
       "locked": {
-        "lastModified": 1759241918,
-        "narHash": "sha256-bZIsExHXGVlV/msrc4Xy3Yu1ARwVEDqlO9jgT/5O3t8=",
+        "lastModified": 1759355801,
+        "narHash": "sha256-RS2NqekEghYlVe1xhKPoKu2qmkVOpeBssZXDZwuWHn8=",
         "path": "/etc/nixos/wallpaper.jpeg",
         "type": "path"
       },
