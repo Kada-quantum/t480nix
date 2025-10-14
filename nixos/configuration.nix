@@ -8,7 +8,16 @@
   pkgs,
   ...
 }: {
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages;
+  boot.kernelPatches = [
+    {
+      name = "Rust Support";
+      patch = null;
+      features = {
+        rust = true;
+      };
+    }
+  ];
 
   imports = [
     ../cachix.nix
