@@ -156,6 +156,47 @@
   systemd.services.NetworkManager-wait-online.enable = false;
   systemd.network.wait-online.enable = false;
 
+  # Containers
+  hardware.nvidia-container-toolkit.enable = true;
+  virtualisation = {
+    # oci-containers = {
+    #   backend = "podman";
+    #   containers = {
+    #     arch = {
+    #       # imageFile = pkgs.dockerTools.pullImage {
+    #       #   imageName = "archlinux";
+    #       #   imageDigest = "sha256:87a967f07ba6319fc35c8c4e6ce6acdb4343b57aa817398a5d2db57bd8edc731";
+    #       #   finalImageTag = "base-devel";
+    #       #   sha256 = "sha256-Wxw73KM7EErVFv4B26JCa4C7f8gARjA6w0fqCclNoZ4=";
+    #       # };
+    #       # imageFile = pkgs.dockerTools.buildImage {
+    #       #   name = "archlinux";
+    #       #   tag = "base-devel";
+    #       #   fromImageName = "archlinux";
+    #       #   fromImageTag = "base-devel";
+    #       #   runAsRoot = ''
+    #       #     #!/bin/sh
+    #       #     pacman-key --init
+    #       #     pacman -Syu
+    #       #   '';
+    #       # };
+    #       # image = "docker.io/library/archlinux:base-devel";
+    #       # hostname = "arch";
+    #       # podman.user = "kada";
+    #       # entrypoint = "/bin/bash";
+    #       # autoStart = false;
+    #     };
+    #   };
+    # };
+    podman = {
+      enable = true;
+      package = pkgs.unstable.podman;
+      # Create the default bridge network for podman
+      # defaultNetwork.settings.dns_enabled = true;
+    };
+  };
+  # systemd.services."podman-arch.service".serviceConfig = { Delegate = "yes"; };
+
   # Services
   services = {
     ratbagd.enable = true;
@@ -544,6 +585,9 @@
   };
 
   environment.systemPackages = with pkgs; [
+    obs-studio
+    harper
+    unstable.ramalama
     eza
     piper
     freecad-qt6

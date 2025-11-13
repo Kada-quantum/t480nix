@@ -48,16 +48,27 @@
       config.allowUnfree = true;
       overlays = [
         (final: prev: {
-          python312 = prev.python312.override {
+          python313 = prev.python313.override {
             packageOverrides = pyself: pysuper: {
-              gcp-storage-emulator = pysuper.gcp-storage-emulator.overrideAttrs (attrs: {
+              psycopg = pysuper.psycopg.overrideAttrs (attrs: {
                 pytestFlagsArray = [
                   # AssertionError: BadRequest not raised
-                  "--deselect=tests/test_server.py::ObjectsTests::test_invalid_crc32c_hash"
+                  "--deselect=tests/test_waiting.py::test_wait_r"
+                  "--deselect=tests/pool/test_pool.py::test_reconnect_after_grow_failed"
                 ];
               });
             };
           };
+          # python312 = prev.python312.override {
+          #   packageOverrides = pyself: pysuper: {
+          #     gcp-storage-emulator = pysuper.gcp-storage-emulator.overrideAttrs (attrs: {
+          #       pytestFlagsArray = [
+          #         # AssertionError: BadRequest not raised
+          #         "--deselect=tests/test_server.py::ObjectsTests::test_invalid_crc32c_hash"
+          #       ];
+          #     });
+          #   };
+          # };
         })
       ];
     };

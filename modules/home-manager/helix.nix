@@ -45,6 +45,20 @@
           command = "codebook-lsp";
           args = ["serve"];
         };
+        language-server.harper = {
+          command = "harper-ls";
+          args = ["--stdio"];
+          config = {
+            "harper-ls" = {
+              dialect = "British";
+              linters =  {
+                LongSentences = false;
+                NoOxfordComma = true;
+                OxfordComma = false;
+              };
+            };
+          };
+        };
         language-server.tinymist.config = {
           typstExtraArgs = ["main.typ"];
           exportPdf = "onType";
@@ -64,7 +78,7 @@
           }
           {
             name = "typst";
-            language-servers = ["tinymist" "codebook"];
+            language-servers = ["tinymist" "codebook" "harper"];
             formatter = {command = "typstyle";};
           }
           {
@@ -98,7 +112,7 @@
           {
             name = "markdown";
             # language-servers = ["markdown-oxide" "marksman" "codebook"];
-            language-servers = ["markdown-oxide" "codebook"];
+            language-servers = ["markdown-oxide" "codebook" "harper"];
           }
           {
             name = "typescript";
@@ -113,6 +127,14 @@
             file-types = ["js" "jsx"];
             auto-format = true;
             language-servers = ["deno-lsp" "codebook"];
+          }
+          {
+            name = "json";
+            auto-format = true;
+            formatter = {
+              command = "jaq";
+              args = ["."];
+            };
           }
         ];
       };
